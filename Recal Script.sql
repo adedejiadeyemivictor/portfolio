@@ -20,6 +20,15 @@ DELETE E FROM ACCTS_TBL E
   WHERE rank > 1;
 
 
+CREATE TABLE Employee
+    (ID INT identity(1,1), FirstName Varchar2(100), LastName Varchar2(100), Country Varchar(100));
+    
+Insert into Employee (FirstName,LastName,Country) values('Raj','Gupta','India'),
+                                ('Raj','Gupta','India'),
+                                ('Mohan','Kumar','USA'),
+                                ('James','Barry','UK'),
+                                ('James','Barry','UK'),
+                                ('James','Barry','UK')
 
   
 ALTER TABLE RSAC_DIGITAL_ACCTS_TBL ENABLE ROW MOVEMENT;
