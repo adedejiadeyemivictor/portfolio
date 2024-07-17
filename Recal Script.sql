@@ -13,6 +13,15 @@ delete from RSAC_STAFF_TBL
 where tb_id in ('161','2', '3', '4', '5', '8', '21', '143' )
 
 
+DELETE E FROM ACCTS_TBL E
+  INNER JOIN
+  (SELECT *, RANK() OVER(PARTITION BY firstname, lastname, country ORDER BY id) rank FROM ACCTS_TBL) T 
+  ON E.ID = t.ID
+  WHERE rank > 1;
+
+
+
+  
 ALTER TABLE RSAC_DIGITAL_ACCTS_TBL ENABLE ROW MOVEMENT;
 
 
